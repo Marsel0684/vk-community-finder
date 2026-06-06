@@ -28,10 +28,5 @@ ALLOWED_USERS: list[int] = [
 
 
 def validate_config():
-    errors = []
     if not BOT_TOKEN:
-        errors.append("BOT_TOKEN не задан")
-    if not VK_TOKEN:
-        errors.append("VK_TOKEN не задан")
-    if errors:
-        raise ValueError("Ошибки конфигурации:\n" + "\n".join(errors))
+        raise ValueError("BOT_TOKEN не задан в .env")
